@@ -97,3 +97,1318 @@
         });  
         </script>
     </head>
+<body style="position:relative;">
+        <header class="header--main">
+        <div class="header--search">
+            <div class="header--container">
+                <div class="header--sidebar">
+                    <div class="header--practice__logo">
+                        <a href="/">Practice</a>
+                    </div>
+                </div>
+                <div class="header--search__div">
+                    <div style="width:80%;position: absolute;"><gcse:search></gcse:search></div>
+                    <input id="header--search__input" placeholder="Search..." type="search" name="header--search__input">
+                    <div class="header--icon_close">x</div>
+                </div>
+            </div>
+        </div>
+            <div class="header--navbar">
+            <div class="header--container">
+                <div id="header--menu__icon"><i class="fas fa-bars"></i></div>
+                <nav class="header--nav">
+                    <ul class="header--sidebar">
+                        <div class="header--practice__logo">
+                            <a href="/">Practice</a>
+                        </div>
+                    </ul>
+                                        <ul class="header--sidebar header--nav__items--left">
+                        <li class="header--nav__item">
+                            <a class="header--nav__link" href="https://practice.geeksforgeeks.org/explore/">
+                                Explore
+                            </a>
+                        </li>
+                        <li class="header--nav__item">
+                            <a class="header--nav__link header--tracks__dropdown" onclick='return false;' href="https://practice.geeksforgeeks.org/tracks/">
+                                Tracks<i class="header--icon__caret"></i>
+                            </a>
+                            <ul class="header--dropdown__menu header--dropdown__trackmenu">
+                                <li class="header--dropdown__item"><a class="header--nav__link" href="https://practice.geeksforgeeks.org/tracks/placement/">Placement</a></li>
+                                <li class="header--dropdown__item"><a class="header--nav__link" href="https://practice.geeksforgeeks.org/tracks/cpp/">CPP</a></li>
+                                <li class="header--dropdown__item"><a class="header--nav__link" href="https://practice.geeksforgeeks.org/tracks/java/">Java</a></li>
+                            </ul>
+                        </li>
+                        <li class="header--nav__item">
+                            <a class="header--nav__link" href="https://practice.geeksforgeeks.org/courses/">
+                                Courses
+                            </a>
+                        </li>
+                        <li class="header--nav__item">
+                            <a class="header--nav__link" href="https://practice.geeksforgeeks.org/contests/">
+                                Contests
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header--nav__items--right">
+                        <li class="header--nav__item">
+                            <a class="header--search__trigger header--nav__link" style="font-size:18px;"><i class="fa fa-search"></i></a>
+                        </li>
+                                            </ul>
+                                        <ul class="header--sidebar">
+                        <li class="header--nav__item">
+                            <a class="header--nav__link login-modal-btn" href="https://auth.geeksforgeeks.org/?to=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fcourses%2F" style="font-size:18px;">Login</a>
+                        </li>
+                    </ul>
+                                    </nav>
+            </div>
+        </div>
+        <div class="header--scrollTop__btn">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </div>
+    </header>
+        <div id="sidr"></div>
+    <div class="modal fade" id="commentModalHeader" role="success">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Message </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="modal-body">
+                            <p>Error</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="reportIssueHeader" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel">Note: For issues in your code/test-cases, please use Comment-System of that particular problem.</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label  class="col-sm-1 control-label" for="inputTestCase">Details</label>
+                            <div class="col-sm-11">
+                              <textarea id="issueDescription" class="form-control" rows="7" cols="100" name="issueDescription" ></textarea>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="float:left;">Cancel</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="reportIssueHeaderMail" style="float:right;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://auth.geeksforgeeks.org/css/bootstrap-social.css">
+<script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer></script>
+<script src="https://apis.google.com/js/platform.js" async></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://auth.geeksforgeeks.org/css/typeahead.css">
+<style>
+  *,
+  *:after,
+  *:before{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .login-modal-div form{
+    margin-bottom: 14px;
+  }
+
+  .login-modal-div input[type=checkbox]{
+    display: inline-block !important;
+  }
+
+  /* The Modal (background) */
+  .login-modal-div{
+    font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 70px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .login-modal-div .modal-content{
+    background-color: #eff1f3;
+    margin: auto;
+    padding-top: 20px;
+    border: 1px solid #888;
+    width: 550px;
+    border-radius: 5px;
+  }
+
+  /* The Close Button */
+  .login-modal-div .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .login-modal-div .close:hover,
+  .login-modal-div .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  .login-modal-div img.logo{
+    width: 250px;
+  }
+
+  .login-modal-div .white-bg{
+    background-color: #fff;
+  }
+
+  .login-modal-div .close-div{
+    height: 30px;
+    padding: 0 20px;
+  }
+
+  .login-modal-div .modal-header{
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .login-modal-div .center{
+    text-align: center;
+  }
+
+  .login-modal-div .alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+
+  .login-modal-div #extra .alert-danger, .login-modal-div .extra .alert-danger{
+    color: #f1270b;
+    background-color: transparent; 
+    border-color: #f65039;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .login-modal-div #extra .alert-info, .login-modal-div .extra .alert-info{
+    color: #1583ed;
+    background-color: transparent;
+    border-color: #418bf9;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .login-modal-div input[type=text],
+  .login-modal-div input[type=email],
+  .login-modal-div input[type=password]{
+    border: 1px solid #C2C7D0;
+    border-top-color: rgb(194, 199, 208);
+    border-right-color: rgb(194, 199, 208);
+    border-bottom-color: rgb(194, 199, 208);
+    border-left-color: rgb(194, 199, 208);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgba(151,159,175,0.1),inset 0 1px 15px rgba(151,159,175,0.05);
+    box-sizing: border-box;
+    color: #39424e;
+    display: inline-block;
+    line-height: 1.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    width: 100%;
+  }
+
+  .modal-form-group{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .modal-form-group .input-icon{
+    position: absolute;
+    z-index: 1;
+    left: 8px;
+    top: 10px;
+    color: #979faf;
+    font-size: 26px;
+  }
+
+  .modal-form-group .modal-form-input{
+    display: block !important;
+    padding: 15px 8px 8px 45px !important;
+    height: auto;
+    width: 450px;
+  }
+
+  .modal-form-group .modal-form-input:focus{
+    border-color: #0f9d58;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(78, 236, 141, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(78, 236, 141, 0.6);
+  }
+
+  .modal-form-group .modal-form-input.error-focus, .modal-form-group .modal-form-input.error-focus:focus{
+    border-color: #ef1313;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(177, 74, 71, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 5px rgba(177, 74, 71, 0.6);
+  }
+
+  .modal-form-group .modal-form-input::placeholder{
+    color: #999;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  @media(max-width: 768px){
+    .login-modal-div{
+      padding-top: 30px;
+    }
+
+    .login-modal-div .modal-content{
+      width: 90%;
+    }
+
+    .modal-form-group .modal-form-input{
+      width: 100%;
+    }
+  }
+
+  .login-modal-div .modal-header section{
+    display: none;
+    padding: 20px 30px 30px 30px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+  }
+
+  .login-modal-div .modal-header input[type=radio]{
+    display: none;
+  }
+
+  .login-modal-div .modal-header label.tab-label{
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #888;
+    border: 1px solid transparent;
+    width: 50%;
+    padding-bottom: 12px;
+    font-size: 20px;
+    border-bottom-width: 4px;
+    background-color: #e9ebee;
+  }
+
+  .login-modal-div .modal-header label.tab-label:first-of-type{
+    float: left;
+  }
+
+  .login-modal-div .modal-header label.tab-label:before{
+    font-weight: normal;
+    margin-right: 10px;
+  }
+
+  .login-modal-div .modal-header label:hover{
+    color: #888;
+    cursor: pointer;
+  }
+
+  .login-modal-div .modal-header input:checked + label.tab-label{
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid #0f9d58;
+    border-bottom: 3px solid #fff;
+    background-color: #fff;
+  }
+
+  .login-modal-div .modal-header #tab1:checked ~ #content1,
+  .login-modal-div .modal-header #tab2:checked ~ #content2{
+    display: block;
+  }
+
+  @media screen and (max-width: 650px) {
+    .login-modal-div .modal-header label.tab-label:before{
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .login-modal-div .modal-header label.tab-label{
+      padding: 15px;
+    }
+  }
+
+  /* css for overlay loading spinner */
+
+  /* Absolute Center Spinner */
+  .spinner-loading-overlay {
+    position: fixed;
+    display: none;
+    z-index: 1001;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* Transparent Overlay */
+  .spinner-loading-overlay:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239,236,233,0.7);
+  }
+
+  .spinner-loading-overlay:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 20px;
+    width: 0.6em;
+    height: 0.6em;
+    margin-top: -0.5em;
+    -webkit-animation: spinner 1500ms infinite linear;
+    -moz-animation: spinner 1500ms infinite linear;
+    -ms-animation: spinner 1500ms infinite linear;
+    -o-animation: spinner 1500ms infinite linear;
+    animation: spinner 1500ms infinite linear;
+    border-radius: 0.5em;
+    -webkit-box-shadow: rgba(15, 157, 88, 0.75) 1.5em 0 0 0, rgba(15, 157, 88, 0.75) 1.1em 1.1em 0 0, rgba(15, 157, 88, 0.75) 0 1.5em 0 0, rgba(15, 157, 88, 0.75) -1.1em 1.1em 0 0, rgba(15, 157, 88, 0.75) -1.5em 0 0 0, rgba(15, 157, 88, 0.75) -1.1em -1.1em 0 0, rgba(15, 157, 88, 0.75) 0 -1.5em 0 0, rgba(15, 157, 88, 0.75) 1.1em -1.1em 0 0;
+    box-shadow: rgba(15, 157, 88, 0.75) 1.5em 0 0 0, rgba(15, 157, 88, 0.75) 1.1em 1.1em 0 0, rgba(15, 157, 88, 0.75) 0 1.5em 0 0, rgba(15, 157, 88, 0.75) -1.1em 1.1em 0 0, rgba(15, 157, 88, 0.75) -1.5em 0 0 0, rgba(15, 157, 88, 0.75) -1.1em -1.1em 0 0, rgba(15, 157, 88, 0.75) 0 -1.5em 0 0, rgba(15, 157, 88, 0.75) 1.1em -1.1em 0 0;
+  }
+
+  /* Animation */
+
+  @-webkit-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-o-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  /* css end for spinner loading */
+
+  .login-modal-div .left{
+    text-align: left;
+  }
+
+  .login-modal-div .right{
+    text-align: right;
+  }
+
+  .login-modal-div .pull-right{
+    float: right;
+  }
+
+  .login-modal-div .pull-left{
+    float: left;
+  }
+
+  .modal-form-label{
+    vertical-align: middle;
+    font-weight: 500;
+    color: #404040;
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+  }
+
+  .login-modal-div a{
+    color: #979faf;
+  }
+
+  .login-modal-div a:hover{
+    color: #0f9d58;
+    text-decoration: underline;
+  }
+
+  .login-modal-div .btn{
+    background-color: whitesmoke;
+    background-image: -webkit-gradient(linear, top left, bottom left, color-stop(0, #2bbe60), color-stop(1, #0f9d58));
+    background-image: -webkit-linear-gradient(top, #2bbe60, #0f9d58);
+    background-image: linear-gradient(to bottom, #2bbe60, #0f9d58);
+    border: 1px solid #0f9d58;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08),inset 0 -1px 4px rgba(151,159,175,0.2);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    position: relative;
+    color: #39424e;
+    text-align: center;
+    text-decoration: none !important;
+    vertical-align: middle;
+  }
+
+  .login-modal-div .btn-green{
+    color: #fff;
+    background-color: #0f9d58;
+    width: 100%;
+    text-shadow: none;
+  }
+
+  .login-modal-div .forgot-link, .login-modal-div .login-link{
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+    position: relative;
+    bottom: -5px;
+  }
+
+  @media(max-width: 768px){
+    .login-modal-div .forgot-link, .login-modal-div .login-link{
+      padding: 10px 0px;    
+    }
+  }
+
+  .login-modal-div .social-signin-div{
+    border: 1px solid #ddd;
+    border-top: none;
+    padding-bottom: 20px;
+  }
+
+  .login-modal-div .social-signin-div .social-div{
+    width: 50%;
+    display: inline-block;
+    padding: 5px 30px;
+  }
+
+  .login-modal-div .social-signin-div .tnc-div{
+    font-size: 10px;
+    padding: 0 15px;
+    color: #999;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .login-modal-div .social-signin-div .tnc-div a{
+    color: #0f9d58;
+  }
+
+  .login-modal-div .social-signin-div .social-divider{
+    width: 80%;
+    text-align: center;
+    border-bottom: 1px solid #979faf;
+    line-height: 0.1em;
+    margin: -20px 0 20px;
+    margin-left: 10%;
+  }
+
+  .login-modal-div .social-signin-div .social-divider span{
+    background: #fff;
+    padding: 0 10px;
+  }
+
+  .login-modal-div .social-signin-div .btn-social{
+    padding-left: 40px;
+    color: #fff;
+  }
+
+  .login-modal-div .social-signin-div .btn-social span.fa{
+    padding-top: 2px;
+  }
+
+  .login-modal-div .social-signin-div .btn-google{
+    background-image: -webkit-gradient(linear, top left, bottom left, color-stop(0, #dd4e41), color-stop(1, #c9453a));
+    background-image: -webkit-linear-gradient(top, #dd4e41, #c9453a);
+    background-image: linear-gradient(to bottom, #dd4e41, #c9453a);
+    color: #fff;
+    border: 1px solid #c9453a;
+    padding-left: 60px;
+  }
+
+  .login-modal-div .social-signin-div .btn-facebook{
+    background-image: -webkit-gradient(linear, top left, bottom left, color-stop(0, #4b66a0), color-stop(1, #3b5998));
+    background-image: -webkit-linear-gradient(top, #4b66a0, #eb5998);
+    background-image: linear-gradient(to bottom, #4b66a0, #3b5998);
+    color: #fff;
+    border: 1px solid #3b5998;
+  }
+
+  .login-modal-div .forgot-div{
+    padding: 20px 30px 30px 30px;
+    border: 1px solid #ddd;
+    display: none;
+  }
+
+  .login-modal-div .forgot-div p:first-of-type{
+    font-weight: 400;
+    color: #404040;
+  }
+
+  .login-modal-div div.input-error{
+    font-size: 12px;
+    color: #b71c1c;
+    letter-spacing: 0.83;
+    text-align: left;
+    position: relative;
+    bottom: 10px;
+    font-weight: 500;
+  }
+
+  #glogin, #fblogin{
+    display: block;
+  }
+
+  @media(max-width:468px){
+    .login-modal-div .social-signin-div .social-div{
+      padding: 0;
+    }
+
+    #glogin, #fblogin{
+      font-size: 14px !important;
+      display: inline-block;
+    }
+
+    #glogin{
+      padding-left: 50px !important;
+    }
+  }
+</style>
+
+<div class="spinner-loading-overlay"></div>
+<div class="login-modal-div">
+  <div class="modal-content">
+    <div class="close-div"><span class="close">&times;</span></div>
+    <div class="white-bg center modal-header">
+      <div class="login-register-div">
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label class="tab-label" for="tab1">Sign In</label>
+      
+        <input id="tab2" type="radio" name="tabs">
+        <label class="tab-label" for="tab2">Sign Up</label>
+
+        <section id="content1">
+          <form method="POST" class="login-form" id="Login">
+            <input type="hidden" name="reqType" value="Login">
+            <div class="modal-form-group">
+              <div class="extra"></div>
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">account_circle</i>
+              <input name="user" id="luser" required="required" type="text" class="modal-form-input" placeholder="Username or email">
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">lock</i>
+              <input name="pass" id="password" type="password" required="required" class="modal-form-input" placeholder="Password">
+            </div>
+            <div class="modal-form-group left">
+              <input name="rem" type="hidden" value="false">
+              <input name="to" type="hidden" value="https://auth.geeksforgeeks.org/loginModal.php">
+              <input name="rem" type="checkbox" checked>
+              <label class="modal-form-label" for="remember">Remember me</label>
+              <a class="pull-right forgot-link">Forgot Password</a>
+            </div>
+            <div class="modal-form-group left">
+              <center><div id="loginCaptcha"></div></center>
+            </div>
+            <button class="btn btn-green signin-button" type="submit">Sign In</button>
+          </form>
+        </section>
+        <section id="content2">
+          <form method="POST" class="login-form" id="Register">
+            <input type="hidden" name="reqType" value="Register">
+            <div class="modal-form-group">
+              <div class="extra"></div>
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">email</i>
+              <input name="email" id="email" type="email" required="required" class="modal-form-input" placeholder="E-mail">
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">lock</i>
+              <input name="pass" id="reg-password" type="password" required="required" class="modal-form-input" placeholder="Password">
+            </div>
+            <div class="modal-form-group">
+              <i class="input-icon material-icons">business</i>
+              <input name="institute" id="organization" autocomplete="off" required="required" type="text" class="modal-form-input typeahead" placeholder="Institution/Organization">
+            </div>
+            <div class="modal-form-group">
+              <center><div id="registerCaptcha"></div></center>
+            </div>
+            <button class="btn btn-green signup-button" type="submit">Sign Up</button>
+          </form>
+        </section>
+        <div class="social-signin-div">
+          <div class="social-divider">
+            <span>or</span>
+          </div>
+          <div class="google-div social-div pull-left">
+            <a id="glogin" href="javascript:void(0)" class="btn btn-social btn-google">
+              <span class="fa fa-google"></span>Google
+            </a>
+          </div>
+          <div class="facebook-div social-div">
+            <a id="fblogin" href="javascript:void(0)" class="btn btn-social btn-facebook">
+              <span class="fa fa-facebook"></span>Facebook
+            </a>  
+          </div>
+          <div class="tnc-div">
+              By creating this account, you agree to our <a href="https://www.geeksforgeeks.org/privacy-policy/" target="_blank">Privacy Policy</a> & <a href="https://www.geeksforgeeks.org/cookie-policy/" target="_blank">Cookie Policy</a>.
+          </div>
+        </div>
+      </div>
+      <div class="forgot-div">
+        <form class="login-form" id="Forgot">
+          <input type="hidden" name="reqType" value="Forgot">
+          <div class="modal-form-group">
+            <div class="extra"></div>
+          </div>
+          <div class="modal-form-group">
+            <p class="left">Please enter your email address or userHandle.</p>
+          </div>
+          <div class="modal-form-group">
+            <i class="input-icon material-icons">account_circle</i>
+            <input name="user" id="fuser" type="text" class="modal-form-input" placeholder="Username/Email">
+          </div>
+          <div class="modal-form-group">
+            <center><div id="forgotCaptcha"></div></center>
+          </div>
+          <div class="modal-form-group left">
+            <a class="login-link">Back to Login</a>
+          </div>
+          <button class="btn btn-green center reset-button" type="submit">Reset Password</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://auth.geeksforgeeks.org/js/typeahead.bundle.min.js"></script>
+<script>
+
+  $('#loginCaptcha').closest('.modal-form-group').hide();
+
+  var redirectUrl = $('#Login').find('input[name=to]').val();
+
+  // pop up modal when button clicks.
+  $('body').on('click', '.login-modal-btn', function(e){
+    e.preventDefault();
+    var href = window.location.href;
+    if($(this).prop("tagName") == "A"){
+        href = $(this).attr('href');
+    }
+    else if($(this).prop("tagName") == "FORM"){
+        href = $(this).attr('action');
+    }
+    $('.login-modal-div').find('input[name=to]').val(href);
+    $('.login-modal-div').fadeIn('fast');
+    redirectUrl = href;
+  });
+
+
+  //google captch initialization for register/forgot section.
+  var captchaSiteKey = '6LexF0sUAAAAADiQjz9BMiSrqplrItl-tWYDSfWa';
+  var forgotWidgetId;
+  var registerWidgetId;
+  var loginWidgetId;
+  var onloadCallback = function() {
+      // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+      // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+      registerWidgetId = grecaptcha.render('registerCaptcha', {
+        'sitekey' : captchaSiteKey,
+      });
+      loginWidgetId = grecaptcha.render('loginCaptcha', {
+        'sitekey' : captchaSiteKey,
+      });
+      forgotWidgetId = grecaptcha.render('forgotCaptcha', {
+        'sitekey' : captchaSiteKey
+      });
+  };
+
+  // check required field.
+  $('body').on('blur', 'input[required=required]', function(){
+    var val = $(this).val();
+    $('.error-focus').removeClass('error-focus');
+    $('div.input-error').remove();
+    if(val == "" || val == null || val == undefined){
+      $(this).closest('.modal-form-group').append('<div class="input-error">Field can not be empty.</div>');
+      $(this).addClass('error-focus');
+      $(this).focus();
+    }
+  });
+
+  //remove error message if input have some words.
+  $('body').on('keydown', 'input[required=required]', function(){
+    var val = $(this).val();
+    if(val != "" || val != null || val != undefined){
+      $(this).removeClass('error-focus');
+      $(this).closest('.modal-form-group').find('.input-error').remove();
+    }
+  });
+
+  // suggest organization.
+  var instituteListBlood = new Bloodhound({
+    initialize: false,
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    sufficient: 5,
+    prefetch: { 
+      url: 'https://auth.geeksforgeeks.org/ajax/getInstituteAjax.php'
+    },
+    remote: {
+      url: 'https://auth.geeksforgeeks.org/ajax/getInstituteAjax.php?q=%QUERY',
+      wildcard: '%QUERY',
+      filter: function (data) {
+        instituteListBlood.add(data);
+        return data;
+      }
+    }
+  });
+
+  $(document).ready(function () {
+    instituteListBlood.clearPrefetchCache();
+    instituteListBlood.initialize();
+    $('input.typeahead').typeahead({
+      minLength: 2,
+      dynamic: false,
+      highlight: true,
+      cache: "sessionStorage",
+      searchOnfocus: true,
+      offset: true,
+      blurOnTab: true
+    }, {
+      displaykey: 'value',
+      limit: 15,
+      source: instituteListBlood.ttAdapter(),
+      accent: true,
+      templates: {
+      empty: [
+              ''
+              ].join('\n')
+      }
+    });
+  });
+
+  $(document).ready(function(){
+
+    // dismiss modal when click on close icon.
+    $('body').on('click', '.close', function(){
+      $(this).closest('.login-modal-div').fadeOut('fast');
+    });
+
+    //dismiss modal when esc key pressed.
+    $(document).keypress(function(e) { 
+        if (e.keyCode == 27) { 
+            $(".login-modal-div").fadeOut('fast');
+        } 
+    });
+
+    //dismiss modal when click outside of it.
+    $('body').on('click', '.login-modal-div', function(){
+        $(".login-modal-div").fadeOut('fast');
+    });
+
+    $('body').on('click', '.login-modal-div .modal-content', function(e){
+        e.stopPropagation();
+    });
+
+    //toggle between forgot div and login div.
+    $('body').on('click', '.login-link, .forgot-link', function(){
+      if($(this).hasClass('login-link')){
+        $('.forgot-div').slideUp();
+        $('.login-register-div').slideDown();
+      }
+      else{
+        $('.login-register-div').slideUp();
+        $('.forgot-div').slideDown();
+      }
+    });
+
+    // redirect function.
+    function redirect(where) {
+      if( where == 'to' ) {
+        window.location.href = to;
+      } else if( where == 'reset' ) {
+        q2to3();
+        $("#ruser").val($("#fuser").val());
+      }
+      else{
+        if(window.location.href == where){
+            window.location.reload(true);
+        }
+        else{
+            window.location.href = where;
+        }
+      }
+    }
+
+    // event on submit either login, register or forgot form.
+    $(".login-form").submit( function(e) {
+      e.preventDefault();
+      this1 = $(this);
+      $('.spinner-loading-overlay').show();
+      this1.find(".extra").empty();
+      this1.find('input[type=submit]').attr('disabled', true);
+      $.ajax({
+        type: "POST",
+        url: 'https://auth.geeksforgeeks.org/auth.php',
+        data: $(this).serialize(),
+        xhrFields: {
+          withCredentials: true
+        },
+        dataType: "json",
+        success: function( data ) {
+          this1.find('input[type=submit]').attr('disabled', false);
+          if( data.redirect ) {
+            redirect( data.redirect );
+          } else if( data.extra ) {
+            $('.spinner-loading-overlay').hide();
+            this1.find(".extra").append(data.extra);
+            var errorTxt = this1.find(".extra").find('div').text().trim();
+            grecaptcha.reset(loginWidgetId);
+            if(errorTxt == "Captcha validation needed" && this1.attr('id') == "Login"){
+              if(!$('#loginCaptcha').closest('.modal-form-group').find('input[name=recaptchaShow]').length){
+                $('#loginCaptcha').closest('.modal-form-group').append('<input name="recaptchaShow" type="hidden" value="1">');
+              }
+              $('#loginCaptcha').closest('.modal-form-group').show();
+            }
+          }
+        },
+        error: function(jqXHR, exception, errorThrown) {
+          this1.find('input[type=submit]').attr('disabled', false);
+          $('.spinner-loading-overlay').hide();
+          console.log( "An error occurred" );
+        },
+        complete: function() {
+          this1.find('input[type=submit]').attr('disabled', false);
+          if(this1.attr('id') == "Forgot"){
+            grecaptcha.reset(forgotWidgetId);
+          }
+          else{
+            grecaptcha.reset(registerWidgetId);
+          }
+        }
+      });
+      return false;
+    });
+
+    //prevent to type space bar in register password field.
+    $('body').on('keydown', 'input[name=pass]', function(e){
+        if($(this).closest('form').find('input[name=reqType]').length && $(this).closest('form').find('input[name=reqType]').val() == "Register"){
+            return e.which !== 32;
+        }
+    });
+
+
+  // Facebook login
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1057487550952154',
+      xfbml      : true,
+      version    : 'v2.12'
+    });
+    $("#fblogin").click(function(){
+      FB.login(function(response){
+        if (response.status === 'connected') {
+          FB.api('/me', {fields: 'email, name'}, function(userData) {
+            var remember = $('#Login').find('input[name=rem]').is(":checked");
+            $('.spinner-loading-overlay').show();
+            $.ajax({
+              type: 'POST',
+              url: 'https://auth.geeksforgeeks.org/oauth/facebook.php',
+              data: { id: response.authResponse.signedRequest, user:userData, redirect:redirectUrl, remember:remember},
+              xhrFields: {
+                withCredentials: true
+              },
+              dataType: 'json',
+              success: function( data ) {
+                if( data.redirect ) {
+                  if(window.location.href == data.redirect){
+                    window.location.reload(true);
+                  }
+                  else{
+                    window.location.href = data.redirect;
+                  }
+                } else if( data.extra ) {
+                  $("#extra").append(data.extra);
+                  $('html, body').animate({
+                    scrollTop: $("#extra").offset().top
+                  }, 2000);
+                } else {
+                  console.log( data );
+                }
+              },
+            });
+          });
+        }
+      }, {scope: 'public_profile,email'});
+    });
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Google login
+  gapi.load('auth2', function(){
+    auth2 = gapi.auth2.init({
+      client_id: '388036620207-3uolk1hv6ta7p3r9l6s3bobifh086qe1.apps.googleusercontent.com',
+      cookiepolicy: 'single_host_origin',
+    });
+    attachSignin(document.getElementById('glogin'));
+  });
+
+  function attachSignin(element) {
+    auth2.attachClickHandler(element, {},
+      function(googleUser) {
+        $('.spinner-loading-overlay').show();
+        var id_token = googleUser.getAuthResponse().id_token;
+        var remember = $('#Login').find('input[name=rem]').is(":checked");
+        $.ajax({
+          url: 'https://auth.geeksforgeeks.org/oauth/google.php',
+          data: { id: id_token, redirect:redirectUrl, remember:remember },
+          xhrFields: {
+            withCredentials: true
+          },
+          dataType: 'json',
+          success: function( data ) {
+            if( data.redirect ) {
+              if(window.location.href == data.redirect){
+                window.location.reload(true);
+              }
+              else{
+                window.location.href = data.redirect;
+              }
+            } else if( data.extra ) {
+              $("#extra").append(data.extra);
+              $('html, body').animate({
+                scrollTop: $("#extra").offset().top
+              }, 2000);
+            } else {
+              console.log( data );
+            }
+          },
+        });
+      }, function(error) {
+        $('.spinner-loading-overlay').hide();
+        console.log(JSON.stringify(error, undefined, 2));
+      }
+    );
+  }
+  });
+
+</script>
+    <div class="container-fluid">
+</div> <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src='/js/gfgpay-min.js'></script>
+<link rel="stylesheet" href="https://cdnpractice.geeksforgeeks.org/css/allCourses-1.3.css?v=1.1">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+</div>
+<div class="container">
+    <!-- Slideshow start -->
+    <div class="row" style="margin-top: -5px;">
+        <div id="coursesCarousel" class="carousel slide" data-ride="carousel">
+
+        <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="min-height: 100px;">
+                <div class="item"><a href="https://practice.geeksforgeeks.org/courses/interview-preparation" target="_blank"><img class="banner-full" src="https://cdnpractice.geeksforgeeks.org/images/courses/webBannerad-min.png" alt="Image3"><img class="banner-mobile" src="https://cdnpractice.geeksforgeeks.org/images/courses/mobBanner-min.png" alt="Loading.."></a></div><div class="item"><a href="https://practice.geeksforgeeks.org/courses/geeks-classes" target="_blank"><img class="banner-full" src="https://cdnpractice.geeksforgeeks.org/images/courses/nwebGeekclasses15dec-min.png" alt="Image3"><img class="banner-mobile" src="https://cdnpractice.geeksforgeeks.org/images/courses/MobGeekclasses15dec.png" alt="Loading.."></a></div><div class="item"><a href="https://practice.geeksforgeeks.org/courses/fork-python/" target="_blank"><img class="banner-full" src="https://cdnpractice.geeksforgeeks.org/images/courses/forkpythonadbannerdesktop-min.png" alt="Image3"><img class="banner-mobile" src="https://cdnpractice.geeksforgeeks.org/images/courses/forkpythonMobile-min.png" alt="Loading.."></a></div><div class="item"><a href="https://practice.geeksforgeeks.org/courses/fork-cpp" target="_blank"><img class="banner-full" src="https://cdnpractice.geeksforgeeks.org/images/courses/forkcpp.png" alt="Image3"><img class="banner-mobile" src="https://cdnpractice.geeksforgeeks.org/images/courses/mobbannerCPP.png" alt="Loading.."></a></div><div class="item"><a href="https://practice.geeksforgeeks.org/courses/fork-java" target="_blank"><img class="banner-full" src="https://cdnpractice.geeksforgeeks.org/images/courses/forkjava.png" alt="Image3"><img class="banner-mobile" src="https://cdnpractice.geeksforgeeks.org/images/courses/mobbanner1.png" alt="Loading.."></a></div><div class="item">
+    <a href="https://practice.geeksforgeeks.org/courses/SudoPlacement-2/" target="_blank">
+        <img class="banner-full" src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/Slide2Full.png" alt="Loading..">
+        <img class="banner-mobile" src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/Slide2Mobile.png" alt="Loading..">
+    </a>
+</div><div class="item">
+    <a href="https://practice.geeksforgeeks.org/courses/SudoPlacement/" target="_blank">
+        <img class="banner-full" src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/sudo_placement_banner-2-min.jpg" alt="Loading..">
+        <img class="banner-mobile" src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/slide3Mobile-min.png" alt="Loading..">
+    </a>
+</div>            </div>
+
+            
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#coursesCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#coursesCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!--div class=row>-->
+    </div>
+    <!--eo SlideShow -->
+
+
+
+<br>
+<div class="col-sm-10 col-sm-offset-1 course-container">
+
+
+<!--My Courses start -->
+<div id ="myCourses">
+
+    <div class="panel crs-panel" style="margin-left:9px" >
+
+          <div class="panel-heading crs-panel-heading">
+            <a class="login-modal-btn" href="https://practice.geeksforgeeks.org/courses/" style="color: #fff; text-decoration:none"> <span class="glyphicon glyphicon-log-in"></span> Login to see your Courses</a>         </div>
+
+    </div>
+
+    <div class="row display-flex" id="my-courses" style="margin-left:0px; margin-right:0px;">
+
+    </div>
+
+</div>
+
+
+<!--My Courses end -->
+
+<!-- Active Courses Start -->
+    <h4 style="margin-left:9px"> Active Courses </h4>
+    <div class="row display-flex" id="active-courses-row">
+        
+        <div class="col-md-4 col-sm-6 col-lg-4" style="margin-top: 20px;">
+            <div class="crs-card " >
+       
+                <a href='/courses/geeks-classes' target="_blank" class="clickable-card"></a>
+                <div class="crs-card-content" style="">
+
+                         
+                    <div class="date-div" style="">  
+
+                         Starting 15 December 
+                    </div>
+                    <img src="https://cdnpractice.geeksforgeeks.org/images/GCsmall2.png" style="z-index:10;">
+                    <div class="caption crs-card__caption">
+                         <h4 style="min-height: 2.2em;"> Geeks Classes in Noida&emsp; [Geeks Classes 6] </h4>
+                              <small class="course-type">  <span class="glyphicon glyphicon-book"></span> Classroom Program </small> &emsp; 
+                              <small class="course-type"> <span class="glyphicon glyphicon-blackboard"></span>16 Lectures  </small> &emsp;
+
+                        <div class="crs-overview ellipsis">
+                            <span class="crs-overview-text">
+                             An extensive classroom programme to build and enhance Data Structures and Algorithm concepts, mentored by Sandeep Jain (Founder & CEO, GeeksforGeeks). He has 7 years of teaching experience and 6 years of industry experience.<br>
+Classes are scheduled in Noida.<br><strong>Course is focused on practicing coding questions in the class itself</strong><br><br>
+Recommended for :
+<ul>
+<li> Pre-Final/Final year students preparing for the Placement drives</li>
+<li> Employee looking for a job change.</li>
+
+</ul> 
+                            </span>
+                        </div>
+                        <br>                        
+                            <a href="/courses/geeks-classes?loginMode=118" target="_blank" class="btn btn-success btn-md pull-right register-btn" role="button" style="z-index:11;">Register</a> 
+                        <p class="course-fee">
+                            <i class="fa fa-inr"></i>10000
+                        </p>
+                        <br>
+                                        
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4 col-sm-6 col-lg-4" style="margin-top: 20px;">
+            <div class="crs-card " >
+       
+                <a href='/courses/fork-python' target="_blank" class="clickable-card"></a>
+                <div class="crs-card-content" style="">
+
+                         
+                    <div class="date-div" style="">  
+
+                         Starting 02 January 
+                    </div>
+                    <img src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/left-bar-fork-python.png" style="z-index:10;">
+                    <div class="caption crs-card__caption">
+                         <h4 style="min-height: 2.2em;"> Fork Python&emsp;  </h4>
+                              <small class="course-type">  <span class="glyphicon glyphicon-globe"></span> Online Course </small> &emsp; 
+                              
+
+                        <div class="crs-overview ellipsis">
+                            <span class="crs-overview-text">
+                             This course is especially designed for the Python beginners who want to enhance their Python skills and get better at solving coding problems using Python. This course will impart you with the knowledge necessary to convert coding logic to a python code. 
+
+Complete this course to tame the Python! 
+                            </span>
+                        </div>
+                        <br>                        
+                            <a href="/courses/fork-python?loginMode=119" target="_blank" class="btn btn-success btn-md pull-right register-btn" role="button" style="z-index:11;">Register</a> 
+                        <p class="course-fee">
+                            Free
+                        </p>
+                        <br>
+                                        
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4 col-sm-6 col-lg-4" style="margin-top: 20px;">
+            <div class="crs-card " >
+       
+                <a href='/courses/interview-preparation' target="_blank" class="clickable-card"></a>
+                <div class="crs-card-content" style="">
+
+                         
+                    <div class="date-div" style="">  
+
+                         Starting 16 December 
+                    </div>
+                    <img src="https://cdnpractice.geeksforgeeks.org/images/courses/thumbnail-min.png" style="z-index:10;">
+                    <div class="caption crs-card__caption">
+                         <h4 style="min-height: 2.2em;"> Interview Preparation&emsp;  </h4>
+                              <small class="course-type">  <span class="glyphicon glyphicon-globe"></span> Online Course </small> &emsp; 
+                              
+
+                        <div class="crs-overview ellipsis">
+                            <span class="crs-overview-text">
+                             This course contains important interview questions which are helpful for students as well as experienced ones. This course will have questions of various difficulty levels. 
+                            </span>
+                        </div>
+                        <br>                        
+                            <a href="/courses/interview-preparation?loginMode=117" target="_blank" class="btn btn-success btn-md pull-right register-btn" role="button" style="z-index:11;">Register</a> 
+                        <p class="course-fee">
+                            Free
+                        </p>
+                        <br>
+                                        
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4 col-sm-6 col-lg-4" style="margin-top: 20px;">
+            <div class="crs-card " >
+       
+                <a href='/courses/fork-java' target="_blank" class="clickable-card"></a>
+                <div class="crs-card-content" style="">
+
+                         
+                    <div class="date-div" style="">  
+
+                         Started 14 November 
+                    </div>
+                    <img src="https://www.geeksforgeeks.org/wp-content/uploads/thumb-min.png" style="z-index:10;">
+                    <div class="caption crs-card__caption">
+                         <h4 style="min-height: 2.2em;"> Fork Java&emsp;  </h4>
+                              <small class="course-type">  <span class="glyphicon glyphicon-globe"></span> Online Course </small> &emsp; 
+                              
+
+                        <div class="crs-overview ellipsis">
+                            <span class="crs-overview-text">
+                             This course is especially designed for the Java apprentices who want to hone their skills in Java for Coding Interviews and Competitive Programming. No matter if you are a school student or college student, if you have the zeal of programming, this is the right time to start. 
+                            </span>
+                        </div>
